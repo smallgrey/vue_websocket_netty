@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netty.chat.mapper.UserMapper">
+
+    <resultMap id="UserResultMap" type="com.netty.chat.entity.User">
+        <result column="userId" jdbcType="INTEGER" property="userId" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="headimg" jdbcType="VARCHAR" property="headimg" />
+    </resultMap>
+
+    <select id="Sel" resultType="com.netty.chat.entity.User">
+        select * from user where username = #{username} and password = #{password}
+    </select>
+
+    <select id="userList" resultMap="UserResultMap">
+        select * from user where username like CONCAT(CONCAT('%',#{username},'%'))
+    </select>
+
+</mapper>

@@ -1,0 +1,18 @@
+application:
+  name: chatroom
+server:
+  port: 8090
+netty:
+  tcp:
+    server:
+      host: 127.0.0.1
+      port: 8088
+spring:
+  datasource: #数据库
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/vue_websocket_netty?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.netty.chat.entity
