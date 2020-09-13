@@ -1,0 +1,47 @@
+@import '~antd/dist/antd.css';
+
+.site-page-header {
+    border: 1px solid rgb(235, 237, 240);
+    padding: 2px 10px;
+}
+
+.ant-page-header-heading-title{
+    font-size: 16px;
+}
+
+.ant-page-header-heading-title{
+    font-size: 16px;
+}
+
+.addressBook-search{
+    padding: 11px 20px;
+    box-sizing: border-box;
+}
+
+.ant-page-header-heading-title{
+  font-weight: initial;
+}
+
+.list-item{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow: scroll;
+} 
+
+.section{
+    margin: 0px 5px 10px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f5f5f5;
+    height: 50px;
+}
+
+.section img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+}

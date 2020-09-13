@@ -1,0 +1,79 @@
+.homepage-hero-module,
+  .video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+ 
+  .video-container .poster img{
+    z-index: 0;
+    position: absolute;
+  }
+ 
+  .video-container .filter {
+    z-index: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+ 
+  .fillWidth {
+    width: 100%;
+  }
+
+  .box{
+	  position: absolute;
+    top: 0px;
+	  z-index: 100;
+    width: 100%;
+    height: 100%;
+  }
+
+  .form-container{
+    position: relative;
+    width:75%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+  }
+
+  input{
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    border: none;
+  }
+
+  input:focus{
+    border: none;
+    outline: none;
+  }
+
+  .login-title{
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .input-item::-webkit-input-placeholder{
+    color: #fff;
+  } 
+
+  .input-item{
+    height: 46px;
+    border-radius: 23px;
+    margin: 0 0 20px 0px;
+    color: #fff;
+    line-height: 46px;
+    text-align: center;
+  }
+
+  .loginbtn{
+    height: 46px;
+    border-radius: 23px;
+    color: #000;
+    background-color: #fff;
+    line-height: 46px;
+    text-align: center;
+  }
