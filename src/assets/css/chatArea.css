@@ -14,6 +14,81 @@
     overflow: scroll;
 }
 
+.chat-content{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(110,110,110,0.1);
+    height: calc(100% - 86px);
+    overflow: scroll;
+}
+.chat-content  .word{
+    display: flex;
+    margin-bottom: 20px;
+}
+.chat-content  .word  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chat-content  .word  .info{
+    margin-left: 10px;
+}
+ 
+.chat-content  .word  .info  .info-content{
+    padding: 10px;
+    font-size: 14px;
+    background: #fff;
+    position: relative;
+    border-radius: 2px;
+}
+.chat-content  .word  .info  .info-content::before{
+    position: absolute;
+    left: -5px;
+    top: 10px;
+    content: '';
+    border-right: 10px solid #FFF;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+   
+.word-my{
+    display: flex;
+    justify-content:flex-end;
+    margin-bottom: 20px;
+}
+.word-my img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.word-my .info{
+    width: 90%;
+    margin-left: 10px;
+    text-align: right;
+}
+.word-my .info  .info-content{
+    max-width: 70%;
+    padding: 10px;
+    font-size: 14px;
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    background: #A3C3F6;
+    text-align: left;
+    border-radius: 2px;
+}
+
+.word-my .info .info-content::after{
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    content: '';
+    border-left: 10px solid #A3C3F6;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
 .chat-area{
     position: absolute;
     width: 100%;

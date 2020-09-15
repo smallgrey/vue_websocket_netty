@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from 'react-router'
 import { Input, PageHeader } from 'antd';
 import '../assets/css/addressBook.css';
 import store from '../store/index';
@@ -7,23 +6,23 @@ import store from '../store/index';
 
 const { Search } = Input;
 
-@withRouter
 class AddressBook extends React.Component{
 
     constructor (){
         super();
         this.state = {
-            listData: []
+            listData: [],
+            user: {}
         }
     }
 
     componentDidMount()
     {
+        console.log(store.getState())
         this.searchUser()
     }
 
     searchUser (username) {
-        if(username ==='' && this.state.listData.length === 0) return;
         username = username || ''
         fetch("http://localhost:8090/user/list?username="+username)
         .then(res => res.json())
@@ -46,7 +45,7 @@ class AddressBook extends React.Component{
         let history = this.props.history;
         history.push({
             pathname:'/chatArea',
-            query:user,
+            query: JSON.stringify(user),
         })
     }
 

@@ -25,24 +25,28 @@ class WSocket {
     }
     c = Object.assign(defaultData, c);
     let _self = this;
+    let timer = ''
     this.wss.onopen = function() {
       this.send(JSON.stringify(c));
-      setInterval(function(){
+      timer = setInterval(function(){
         let c = {
           event: 'heartbeat',
           username: '',
-          from: '1',
-          to: "1",
+          from: '1015',
+          to: "1015",
           type: 'text',
-          data: '心跳'
+          data: '心跳',
+          myHeadUrl: '',
+          headUrl: ''
         }
         console.log("心跳")
-        _self.send(c)
+        _self.sendmsg(c)
       }, 50000);
     };
     this.wss.onclose = function (e) {
       console.log('websocket 断开: ' + e.code + ' ' + e.reason + ' ' + e.wasClean)
       console.log(e)
+      clearInterval(timer)
     }
   }
 
@@ -51,12 +55,15 @@ class WSocket {
       f(evt.data);
     };
   }
-  
-  send (c) {
+
+  sendmsg (c) {
     c = Object.assign(defaultData, c);
+    console.log(JSON.stringify(c))
     this.wss.send(JSON.stringify(c));
   }
 
 }
 
-export default new WSocket();
+const socket = new WSocket();
+
+export default socket

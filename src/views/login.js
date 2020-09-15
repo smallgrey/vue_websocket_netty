@@ -26,6 +26,9 @@ class Login extends React.Component {
           username: '',
           password: ''
         }
+        // 组件不能自动更新，需要订阅状态
+        this.storeChange = this.storeChange.bind(this)  //转变this指向
+        store.subscribe(this.storeChange) //订阅Redux的状态，每次state发生改变会触发里面的函数
     }
 
     calcFixStyle (){  //计算该大小窗口下的视频样式
@@ -70,6 +73,11 @@ class Login extends React.Component {
       }
     }
 
+    storeChange (){
+      let history = this.props.history
+      history.push("/addressBook")
+    }
+
     login () {
       if(this.state.username === '' || this.state.password === '') return;
       fetch("http://localhost:8090/user/login?username="+this.state.username+'&password='+this.state.password)
@@ -86,20 +94,11 @@ class Login extends React.Component {
             //连接websocket  
             const action = {
               type: CONNECT_WEBSOCKET,
-              callback: this.msgCallback.bind(this)
             }
             store.dispatch(action)
-            let history = this.props.history;
-            history.push("/addressBook")
         })
     }
 
-    /**
-     * 服务器msg消息返回处理回调函数
-     */
-    msgCallback(msg) {
-        console.log(msg)
-    }
     render () {
         this.calcFixStyle()
         return (
